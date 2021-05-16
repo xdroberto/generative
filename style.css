@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+ /*font-family: 'Michroma', sans-serif;*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ body {
+  margin: 0;
+  overflow: hidden;
+  overflow-x: hidden;
+  background: #000;
+}
+
+.navbar {
+  z-index: -5;
+  width: 100%;
+  background: rgba(255, 255, 255, .08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+.title{
+  display: flex;
+  font-family: 'Michroma', sans-serif;
+  color: #fff;
+  font-size: 1em;
+  width: 100%;
+  justify-content: center;
+}
+
+#toggler {
+  display: none;
+}
+.icon,
+.close-btn {
+  display: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.logo{
+  padding-top: .5em;
+  padding-left: .2em;
+}
+.links {
+  display: flex;
+  list-style: none;
+  font-family: 'Michroma', sans-serif;
+}
+.links li {
+  margin-right: 24px;
+}
+.links li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .8);
+  letter-spacing: -0.5px;
+}
+.links li a:hover {
+  color: rgba(255, 0, 0, 1);
+}
+.backdrop {
+  display: none;
+  animation: 0.4s ease-in-out fadeIn forwards;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  to {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+/* Mobile view */
+@media (max-width: 675px) {
+  .icon,
+  .close-btn {
+    display: block;
+    cursor: pointer;
+  }
+  .icon {
+    position: absolute;
+    right: 24px;
+  }
+  .links {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 90%;
+    right: -90%;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+  }
+  .links li {
+    margin-right: 0;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+  }
+  .close-btn {
+    position: absolute;
+    top: 24px;
+    right: -90vh;
+    color: #575757;
+    font-size: 2em;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+  }
+  .close-btn:hover {
+    color: #000;
+    cursor: pointer;
+  }
+
+  input#toggler:checked ~ .links-wrapper .links {
+    right: 0;
+  }
+  input#toggler:checked ~ .links-wrapper .close-btn {
+    right: 32px;
+  }
+  input#toggler:checked ~ .links-wrapper .backdrop {
+    display: block;
+  }
+}
+
+canvas {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin-top: 12em;
+  margin-left: 35.1%;
+}
+
